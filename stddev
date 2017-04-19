@@ -1,0 +1,22 @@
+#! /usr/bin/python
+import sys
+mean = 0
+i = 0
+summ = 0 #sum for mean
+sumd = 0 #sum of distances
+array = []
+for line in sys.stdin:
+        line = line.strip()
+        num = float(line)
+        array.append(num)
+	summ += num
+        i += 1
+mean = summ / i
+
+for a in array:
+        d = a - mean
+        dis = d ** 2
+	sumd += dis
+stddev = (sumd/(i-1))**0.5
+
+print stddev
